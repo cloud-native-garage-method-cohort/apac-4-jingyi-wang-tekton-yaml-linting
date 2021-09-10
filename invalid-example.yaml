@@ -1,13 +1,14 @@
+---
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-name: nodejs-pipeline
+  name: nodejs-pipeline
 spec:
   params:
     - name: source-repo
-  type: string
+      type: string
       description: Source code repository
-  - workspaces:
+  workspaces:
     - name: pipeline-shared-data
   tasks:
     - name: clone-repository
